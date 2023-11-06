@@ -18,7 +18,7 @@ const NewsFeed = () => {
     const [pageSize, setPageSize] = useState(20);
     const [pageNumber, setPageNumber] = useState(1);
     const [favouritesArray, setfavouritesArray] = useState([]);
-    // const [localFavourites, setLocalFavourites] = useState([]);
+    const [currentFavourite, setCurrentFavourite] = useState('');
     let tempFavouritesArray = [];
 
     const makeFavourite = (newsItem, favourite) => {
@@ -34,9 +34,15 @@ const NewsFeed = () => {
             tempFavouritesArray.splice(markforDeletion, 1);
             setfavouritesArray(tempFavouritesArray);
         }
+        setCurrentFavourite(newsItem);
+
         console.log('tempFavouritesArray', tempFavouritesArray);
         localStorage.setItem('storedFavouritesArray', JSON.stringify(tempFavouritesArray));
     };
+
+    useEffect(() => {
+        console.log('currentFavourite', currentFavourite);
+    }, [currentFavourite]);
 
     const searchFilterFunction = (value) => {
         setSearchTerm(value);
