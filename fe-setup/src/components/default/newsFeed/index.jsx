@@ -18,31 +18,33 @@ const NewsFeed = () => {
     const [pageSize, setPageSize] = useState(20);
     const [pageNumber, setPageNumber] = useState(1);
     const [favouritesArray, setfavouritesArray] = useState([]);
-    const [currentFavourite, setCurrentFavourite] = useState('');
+    const [favouriteUpdate, setFavouriteUpdate] = useState({});
     let tempFavouritesArray = [];
 
     const makeFavourite = (newsItem, favourite) => {
         tempFavouritesArray = favouritesArray;
+        const uniq = (new Date()).getTime();
         if (favourite) {
             if (tempFavouritesArray.filter((favouriteNewsItem) => favouriteNewsItem.id === newsItem.id).length === 0) {
                 tempFavouritesArray.push(newsItem);
-                setfavouritesArray(tempFavouritesArray);
+                setFavouriteUpdate(uniq);
             }
+            setFavouriteUpdate(uniq);
         } else {
             const markforDeletion = tempFavouritesArray.findIndex((favouriteNewsItem) => favouriteNewsItem.id === newsItem.id);
             // console.log('markforDeletion', markforDeletion);
             tempFavouritesArray.splice(markforDeletion, 1);
             setfavouritesArray(tempFavouritesArray);
+            setFavouriteUpdate(uniq);
         }
-        setCurrentFavourite(newsItem);
 
         console.log('tempFavouritesArray', tempFavouritesArray);
         localStorage.setItem('storedFavouritesArray', JSON.stringify(tempFavouritesArray));
     };
 
     useEffect(() => {
-        console.log('currentFavourite', currentFavourite);
-    }, [currentFavourite]);
+        console.log('favouriteUpdate', favouriteUpdate);
+    }, [favouriteUpdate]);
 
     const searchFilterFunction = (value) => {
         setSearchTerm(value);
@@ -150,8 +152,8 @@ const NewsFeed = () => {
                             && (
                                 <>
                                     <ul className="favourite-list">
-                                        {favouritesArray.map((localFavNewsItem) => {
-                                            const uniqueID = localFavNewsItem.id.replace(/\\|\//g, '_');
+                                        {favouritesArray.map((FavouriteNewsItem) => {
+                                            const uniqueID = FavouriteNewsItem.id.replace(/\\|\//g, '_');
 
                                             return (
                                                 <li key={uniqueID} style={{ border: '3px solid red' }}>
@@ -161,23 +163,23 @@ const NewsFeed = () => {
                                                                 id={uniqueID}
                                                                 type="checkbox"
                                                                 defaultChecked="true"
-                                                                onChange={(e) => makeFavourite(localFavNewsItem, e.target.checked)}
+                                                                onChange={(e) => makeFavourite(FavouriteNewsItem, e.target.checked)}
                                                             />
                                                             Favourite
                                                         </label>
                                                     </div>
                                                     <br />
-                                                    <h3>{localFavNewsItem.webTitle}</h3>
+                                                    <h3>{FavouriteNewsItem.webTitle}</h3>
                                                     <br />
                                                     <a
-                                                        href={localFavNewsItem.webUrl}
+                                                        href={FavouriteNewsItem.webUrl}
                                                         target="_blank"
                                                         rel="noreferrer"
                                                     >
                                                         read more
                                                         <span className="visually-hidden">
                                                             about&nbsp;
-                                                            {localFavNewsItem.webTitle}
+                                                            {FavouriteNewsItem.webTitle}
                                                         </span>
                                                     </a>
                                                 </li>
@@ -190,23 +192,32 @@ const NewsFeed = () => {
                         {filteredResult && filteredResult.length > 0
                             && (
                                 <>
-
                                     <ul className="list-group">
                                         {filteredResult.map((newsItem) => {
                                             const uniqueID = newsItem.id;
+                                            const showFavCheck = true;
+                                            // if (favouritesArray.filter((favouritesArrayItem) => favouritesArrayItem.id === newsItem.id)) {
+                                            //     showFavCheck = false;
+                                            // }
+                                            // console.log('showFavCheck', showFavCheck);
 
                                             return (
                                                 <li key={uniqueID}>
-                                                    <div className="favourite">
-                                                        <label htmlFor={uniqueID}>
-                                                            <input
-                                                                id={uniqueID}
-                                                                type="checkbox"
-                                                                onChange={(e) => makeFavourite(newsItem, e.target.checked)}
-                                                            />
-                                                            Favourite
-                                                        </label>
-                                                    </div>
+                                                    {showFavCheck
+                                                        && (
+                                                            <>
+                                                                <div className="favourite">
+                                                                    <label htmlFor={uniqueID}>
+                                                                        <input
+                                                                            id={uniqueID}
+                                                                            type="checkbox"
+                                                                            onChange={(e) => makeFavourite(newsItem, e.target.checked)}
+                                                                        />
+                                                                        Favourite
+                                                                    </label>
+                                                                </div>
+                                                            </>
+                                                        )}
                                                     <br />
                                                     <h3>{newsItem.webTitle}</h3>
                                                     <br />
