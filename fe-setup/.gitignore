@@ -1,0 +1,17 @@
+# General
+node_modules
+public
+dist
+*.map
+
+# OS X
+.DS_Store
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini

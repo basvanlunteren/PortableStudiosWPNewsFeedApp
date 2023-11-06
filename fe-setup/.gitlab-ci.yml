@@ -1,0 +1,16 @@
+image: node:12.16.1
+
+pages:
+  script:
+    - yarn install
+    - yarn run build-storybook
+    - cp ./dist/sprite.svg ./public/sprite.svg
+  artifacts:
+    paths:
+      - public
+  cache:
+    paths:
+      - node_modules
+
+  only:
+    - feature/component-starter

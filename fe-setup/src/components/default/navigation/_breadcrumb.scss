@@ -1,0 +1,49 @@
+.breadcrumb {
+    display: inline-block;
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+    list-style: none;
+    font-size: $font-size-smaller;
+    border-radius: $radius;
+    border: 1px solid $color-silver;
+    font-weight: $font-weight-bold;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:first-child) {
+            padding-left: 0.5rem;
+
+            &::before {
+                content: "/";
+                color: $color-grey;
+                display: inline-block;
+                padding-right: 0.5rem;
+            }
+        }
+
+        &--home {
+            a {
+                vertical-align: middle;
+            }
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+        &--current {
+            color: $color-grey;
+            font-weight: $font-weight-normal;
+        }
+    }
+}

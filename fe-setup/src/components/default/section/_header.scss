@@ -1,0 +1,102 @@
+.header {
+    font-size: $font-size-smaller;
+
+    &__top {
+        color: $color-grey;
+        background-color: $color-silver;
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header__block {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__social,
+        .header__action {
+            svg {
+                stroke: $color-grey;
+            }
+        }
+    }
+
+    &__main {
+        color: $color-black;
+        background-color: $color-white;
+
+        &-wrap {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__block {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__toggle {
+        width: 2rem;
+        height: 2rem;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__links {
+        a:not(.button) {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-link:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__social,
+    &__action {
+        display: flex;
+
+        &-link {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: block;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                stroke: $color-black;
+            }
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    &__action {
+        margin-left: 1.5rem;
+    }
+
+    &__logo {
+        &-text {
+            margin: 0;
+        }
+    }
+}

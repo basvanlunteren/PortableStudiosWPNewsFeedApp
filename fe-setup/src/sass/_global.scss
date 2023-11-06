@@ -1,0 +1,174 @@
+html {
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+    font-size: .625em;
+}
+
+body {
+    color: $color-black;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-family: $font-primary;
+    font-weight: $font-weight-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// Type
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6,
+.display-1,
+.display-2 {
+    margin: 0 0 $margin;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+}
+
+h1,
+.heading-1 {
+    font-size: $heading-1;
+}
+
+h2,
+.heading-2 {
+    font-size: $heading-2;
+}
+
+h3,
+.heading-3 {
+    font-size: $heading-3;
+}
+
+h4,
+.heading-4 {
+    font-size: $heading-4;
+}
+
+h5,
+.heading-5 {
+    font-size: $heading-5;
+}
+
+h6,
+.heading-6 {
+    font-size: $heading-6;
+}
+
+.display-1 {
+    font-size: $display-1;
+}
+
+.display-2 {
+    font-size: $display-2;
+}
+
+p {
+    margin: 0 0 $margin;
+}
+
+a {
+    color: inherit;
+    transition: all $transition;
+
+    @include focusOutline;
+}
+
+b,
+strong {
+    font-weight: $font-weight-bold;
+}
+
+small {
+    font-size: $font-size-smaller;
+}
+
+blockquote {
+    margin: 0 0 $margin;
+    padding: 0.5rem 1.5rem;
+    font-size: $heading-5;
+    border-left: 0.4rem solid $color-silver;
+}
+
+// Lists
+ol li ol {
+    list-style-type: lower-roman;
+}
+
+dt {
+    font-weight: $font-weight-bold;
+}
+
+// Tables
+table {
+    width: 100%;
+    margin: 0 0 $margin;
+
+    td,
+    th {
+        padding: $padding;
+        vertical-align: top;
+        border-top: 1px solid $color-silver;
+        text-align: inherit;
+    }
+
+    th {
+        font-weight: $font-weight-bold;
+    }
+
+    thead th {
+        vertical-align: bottom;
+        border-bottom: 1px solid $color-silver;
+    }
+}
+
+// Misc
+hr {
+    height: 1px;
+    border: none;
+    background-color: $color-silver;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.icon {
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}

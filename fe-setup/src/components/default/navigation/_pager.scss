@@ -1,0 +1,32 @@
+.pager {
+    display: flex;
+    justify-content: space-between;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-smaller;
+
+    &__link {
+        padding: 0.5rem 1.25rem;
+        border: 1px solid currentColor;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $color-silver;
+        }
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+
+        &--left {
+            margin-left: -0.25rem;
+        }
+
+        &--right {
+            margin-right: -0.25rem;
+        }
+    }
+}

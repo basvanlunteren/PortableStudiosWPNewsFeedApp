@@ -1,0 +1,154 @@
+<h1>Input</h1>
+
+<div class="container">
+    <form class="grid grid--3">
+        <!-- Text -->
+        <div class="form__group">
+            <label class="form__label" for="text-1">Field label:</label>
+            <input
+                type="text"
+                class="form__control"
+                id="text-1"
+                placeholder="Sample placeholder"
+                aria-describedby="text-1-instructions"
+            />
+            <span id="text-1-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="text-2">Field label:</label>
+            <input
+                type="text"
+                class="form__control form__control--valid"
+                id="text-2"
+                placeholder="Sample placeholder"
+                aria-describedby="text-2-instructions"
+            />
+            <span id="text-2-instructions" class="form__instructions">Example success input.</span>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="text-3">Field label:</label>
+            <input
+                type="text"
+                class="form__control form__control--invalid"
+                id="text-3"
+                placeholder="Sample placeholder"
+                aria-describedby="text-3-feedback"
+            />
+            <div id="text-3-feedback" class="form__feedback">Example invalid text.</div>
+        </div>
+
+        <!-- Password -->
+        <div class="form__group">
+            <label class="form__label" for="password-1">Password:</label>
+            <input
+                type="password"
+                class="form__control"
+                id="password-1"
+                placeholder="Sample placeholder"
+                aria-describedby="password-1-instructions"
+            />
+            <span id="password-1-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="password-2">Password:</label>
+            <input
+                type="password"
+                class="form__control form__control--valid"
+                id="password-2"
+                placeholder="Sample placeholder"
+                aria-describedby="password-2-instructions"
+            />
+            <span id="password-2-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="password-3">Password:</label>
+            <input
+                type="password"
+                class="form__control form__control--invalid"
+                id="password-3"
+                placeholder="Sample placeholder"
+                aria-describedby="password-3-instructions"
+            />
+            <span id="password-3-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <!-- Date -->
+        <div class="form__group">
+            <label class="form__label" for="date-1">Date:</label>
+            <input
+                type="date"
+                class="form__control"
+                id="date-1"
+                placeholder="Sample placeholder"
+                aria-describedby="date-1-instructions"
+            />
+            <span id="date-1-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="date-2">Date:</label>
+            <input
+                type="date"
+                class="form__control form__control--valid"
+                id="date-2"
+                placeholder="Sample placeholder"
+                aria-describedby="date-2-instructions"
+            />
+            <span id="date-2-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="date-3">Date:</label>
+            <input
+                type="date"
+                class="form__control form__control--invalid"
+                id="date-3"
+                placeholder="Sample placeholder"
+                aria-describedby="date-3-instructions"
+            />
+            <span id="date-3-instructions" class="form__instructions">Example instructional text.</span>
+        </div>
+
+        <!-- Presets -->
+        <div class="form__group">
+            <label class="form__label" for="text-preset-1">Preset label:</label>
+            <div class="form__preset">
+                <span id="text-preset-1-prepend" class="form__preset-type">@</span>
+                <input
+                    type="text"
+                    class="form__control"
+                    id="text-preset-1"
+                    placeholder="Sample placeholder"
+                    aria-describedby="text-preset-1-prepend"
+                />
+            </div>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="text-preset-2">Preset label:</label>
+            <div class="form__preset">
+                <input
+                    type="text"
+                    class="form__control"
+                    id="text-preset-2"
+                    placeholder="Sample placeholder"
+                    aria-describedby="text-preset-2-prepend"
+                />
+                <span class="form__preset-type" id="text-preset-2-prepend">@gmail.com</span>
+            </div>
+        </div>
+
+        <div class="form__group">
+            <label class="form__label" for="file-upload-1" data-button="Choose File">File browser <small>(PNG, JPG):</small></label>
+            <input
+                type="file"
+                class="form__control"
+                id="file-upload-1"
+            />
+        </div>
+    </form>
+</div>

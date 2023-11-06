@@ -1,0 +1,132 @@
+.tooltip {
+    position: relative;
+
+    &::before,
+    &::after {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 10;
+        transition: all $transition;
+    }
+
+    &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 0.25rem solid transparent;
+    }
+
+    &::after {
+        content: attr(aria-label);
+        color: $color-white;
+        background: $color-dark;
+        border-radius: $radius;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &--top {
+        &::before,
+        &::after {
+            bottom: 100%;
+            left: 50%;
+            transform: translate(-50%, 0.25rem);
+        }
+
+        &::before {
+            border-top-color: $color-dark;
+        }
+
+        &::after {
+            margin-bottom: 0.5rem;
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+
+    &--bottom {
+        &::before,
+        &::after {
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -0.25rem);
+        }
+
+        &::before {
+            border-bottom-color: $color-dark;
+        }
+
+        &::after {
+            margin-top: 0.5rem;
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+
+    &--right {
+        &::before,
+        &::after {
+            top: 50%;
+            left: 100%;
+            transform: translate(-0.25rem, -50%);
+        }
+
+        &::before {
+            border-right-color: $color-dark;
+        }
+
+        &::after {
+            margin-left: 0.5rem;
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    &--left {
+        &::before,
+        &::after {
+            top: 50%;
+            right: 100%;
+            transform: translate(0.25rem, -50%);
+        }
+
+        &::before {
+            border-left-color: $color-dark;
+        }
+
+        &::after {
+            margin-right: 0.5rem;
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.progress {
+    display: flex;
+    margin: 0;
+    padding: 0.5rem 0;
+
+    a {
+        opacity: 0.5;
+        padding-right: 2rem;
+        text-decoration: none;
+        pointer-events: none;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            background-repeat: no-repeat;
+            background-size: 1rem;
+            background-position: right 0.5rem center;
+            background-image: url(../../../assets/icons/chevron-right.svg);
+        }
+
+        &--cleared a {
+            opacity: 1;
+            color: $color-black;
+            font-weight: $font-weight-bold;
+            text-decoration: underline;
+            pointer-events: initial;
+        }
+
+        &--current a {
+            opacity: 1;
+            color: $color-black;
+        }
+    }
+}

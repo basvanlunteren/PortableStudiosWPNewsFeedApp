@@ -1,0 +1,71 @@
+/**
+ * Sass Variables
+ */
+
+// Colors
+
+$color-white: #fff; // Straight up white;
+$color-cream: #fafafa; // Neutral Light A;
+$color-silver: #ebebeb; // Neutral Light B;
+$color-grey: #919191; // Neutral Medium;
+$color-black: #1e1e1e; // Neutral Dark;
+
+$color-green: #22c68b; // Success;
+$color-green-dark: #2b542c; // Success Dark;
+$color-red-light: #e66e6e; // Call to Action;
+$color-red: #dc3545; // Error;
+$color-red-dark: #b11726; // Error Dark;
+$color-blue: #1d06d6; // Brand Primary;
+$color-blue-dark: #120097; // Brand Primary Dark;
+$color-blue-light: #e0efff; // Brand Secondary;
+
+$color-primary: $color-blue;
+$color-secondary: $color-blue-light;
+$color-success: $color-green;
+$color-error: $color-red;
+$color-light: $color-grey;
+$color-dark: $color-black;
+
+// Typography
+
+$font-primary: 'SFProDisplay', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-size: 1.6rem;
+$font-size-smaller: 1.4rem;
+$font-size-larger: 1.8rem;
+
+$line-height: 1.5;
+$line-height-heading: 1.1;
+
+$display-1: 9.6rem;
+$display-2: 7.2rem;
+
+$heading-1: 5.6rem;
+$heading-2: 4rem;
+$heading-3: 3.8rem;
+$heading-4: 2.8rem;
+$heading-5: 2.4rem;
+$heading-6: 2rem;
+
+// Media - Use px for media queries
+$break-xs: 220px;
+$break-sm: 480px;
+$break-md: 768px;
+$break-lg: 1024px;
+$break-xl: 1200px;
+
+// Layout
+
+$gap: 1.5rem;
+$margin: 0.75rem;
+$padding: 1.25rem;
+$container: 80rem;
+
+// Misc
+
+$radius: 0.3rem;
+$transition: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);

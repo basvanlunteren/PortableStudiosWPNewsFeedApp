@@ -1,0 +1,65 @@
+
+.menu {
+    display: flex;
+    list-style-type: none;
+
+    a:not(.button) {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        &--button .button {
+            padding: 0.5rem 0.75rem;
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+            > .menu__child {
+                opacity: 1;
+                position: absolute;
+                visibility: visible;
+                transform: translateY(0);
+                transition: opacity $transition, transform $transition, visibility 0s linear 0s;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+
+    &__child {
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 10rem;
+        left: 0;
+        top: 100%;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9;
+        background-color: $color-silver;
+        border-radius: $radius;
+        transform: translateY(0.25rem);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        transition: opacity $transition, transform $transition, visibility 0s linear;
+
+        &-link {
+            display: block;
+        }
+    }
+}

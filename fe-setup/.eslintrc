@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "max-len": [
+            "warn", {
+                "code": 240,
+                "comments": 120
+            }
+        ],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "react/jsx-indent": ["error", 4],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    }
+}

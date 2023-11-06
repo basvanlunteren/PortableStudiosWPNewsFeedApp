@@ -1,0 +1,42 @@
+/**
+ * Sass mixins and functions
+ */
+
+@mixin focusOutline {
+    &:focus,
+    &--focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+    }
+}
+
+// Break points
+@mixin xs() {
+    @media (min-width: $break-xs) {
+        @content;
+    }
+}
+
+@mixin sm() {
+    @media (min-width: $break-sm) {
+        @content;
+    }
+}
+
+@mixin md() {
+    @media (min-width: $break-md) {
+        @content;
+    }
+}
+
+@mixin lg() {
+    @media (min-width: $break-lg) {
+        @content;
+    }
+}
+
+@mixin xl() {
+    @media (min-width: $break-lg) {
+        @content;
+    }
+}

@@ -1,0 +1,38 @@
+.accordion {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    &__title {
+        font-size: $font-size;
+        margin: 0;
+    }
+
+    &__toggle {
+        width: 100%;
+        text-align: left;
+        padding: 1.25rem 2.5rem 0.5rem 0;
+        background-repeat: no-repeat;
+        background-position: right 1.25rem;
+        background-size: 1rem;
+        background-image: url(../../../assets/icons/plus.svg);
+    }
+
+    &__content {
+        display: none;
+        padding: 1rem;
+        background-color: $color-silver;
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--expanded {
+        .accordion__toggle {
+            background-image: url(../../../assets/icons/minus.svg);
+        }
+
+        .accordion__content {
+            display: block;
+        }
+    }
+}

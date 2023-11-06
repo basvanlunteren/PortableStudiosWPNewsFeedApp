@@ -1,0 +1,58 @@
+.button {
+    color: $color-white;
+    font-size: 1rem;
+    font-weight: inherit;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8em 1em;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    border-radius: $radius;
+    transition: all $transition;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover,
+    &:focus,
+    .button--hover,
+    .button--focus {
+        color: $color-primary;
+        border-color: currentColor;
+        background-color: transparent;
+    }
+
+    @include focusOutline;
+
+    &:active {
+        opacity: 0.75;
+    }
+
+    &:disabled {
+        opacity: 0.25;
+        pointer-events: none;
+    }
+
+    .button--small {
+        font-size: $font-size-smaller;
+    }
+
+    .button--large {
+        font-size: $font-size-larger;
+    }
+
+    .button--block {
+        width: 100%;
+        font-size: $font-size-larger;
+    }
+
+    .button--reset {
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all $transition;
+
+        @include focusOutline;
+    }
+}
